@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centered Button and Info Box</title>
+    <style>
+        /* General styles */
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+        }
+
+        /* Centered button */
+        .button {
+            padding: 10px 20px;
+            background-color: red;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 18px;
+            cursor: pointer;
+            position: absolute;
+        }
+
+        /* Hidden info box */
+        .info-box {
+            display: none;
+            position: absolute;
+            width: 300px;
+            height: 200px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+        }
+
+        /* Show the box and hide the button when active */
+        .active .button {
+            display: none;
+        }
+
+        .active .info-box {
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <button class="button" onclick="showInfo()">Read Info</button>
+        <div class="info-box">This is info</div>
+    </div>
+
+    <script>
+        function showInfo() {
+            document.getElementById('container').classList.add('active');
+        }
+    </script>
+</body>
+</html>
